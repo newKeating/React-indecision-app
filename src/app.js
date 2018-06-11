@@ -9,9 +9,9 @@ class IndecisionApp extends React.Component {
       options: props.options
     };
   }
-  componentDidMount(){
+  componentDidMount() {
     try {
-      const json = localStorage.getItem('opitons');
+      const json = localStorage.getItem('options');
       const options = JSON.parse(json);
 
       if (options) {
@@ -19,16 +19,16 @@ class IndecisionApp extends React.Component {
       }
     } catch (e) {
       // Do nothing at all
-    }   
+    }
   }
   componentDidUpdate(prevProps, prevState) {
-    if(prevState.options.length !== this.state.options.length) {
+    if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem('options', json);
     }
   }
   componentWillUnmount() {
-    console.log('componentWillUnmount')
+    console.log('componentWillUnmount');
   }
   handleDeleteOptions() {
     this.setState(() => ({ options: [] }));

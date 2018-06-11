@@ -32,7 +32,7 @@ var IndecisionApp = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       try {
-        var json = localStorage.getItem('opitons');
+        var json = localStorage.getItem('options');
         var options = JSON.parse(json);
 
         if (options) {
